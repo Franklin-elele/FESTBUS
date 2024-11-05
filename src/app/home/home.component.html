@@ -1,0 +1,30 @@
+<!-- home.component.html -->
+<div class="main">
+  <div class="logo">
+    ~FESTBUS
+  </div>
+  <div id="map" class="map-container"></div>
+
+  <div class="search">
+    <input type="text" id="search" placeholder="Search for a location" (input)="onSearchInput($event)">
+  </div>
+
+  <div class="nearby-stops-container">
+    <div class="header">Nearby stops</div>
+    <div *ngFor="let stop of stops" class="stop-card">
+      <div class="stop-info">
+        <div class="icon"><i class="fas fa-bus"></i></div>
+        <div class="stop-details">
+          <div class="stop-name">{{ stop.name }}</div>
+          <div class="walk-info">{{ stop.distance }} {{ stop.destination }}</div>
+        </div>
+        <div class="favorite-icon"><i class="fas fa-heart"></i></div>
+      </div>
+      <div *ngFor="let route of stop.routes" class="route-info">
+        <span class="route-number">{{ route.number }}</span>
+        <span class="route-destination">{{ route.destination }}</span>
+        <span class="route-eta">{{ route.eta }}</span>
+      </div>
+    </div>
+  </div>
+</div>

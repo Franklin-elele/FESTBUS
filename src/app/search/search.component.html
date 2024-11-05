@@ -1,0 +1,43 @@
+<div class="search-container">
+  <h2>Bus Route Search</h2>
+
+  <div class="route-selection">
+    <div class="input-group">
+      <label for="from">Starting Point:</label>
+      <select id="from" [(ngModel)]="from">
+        <option value="" disabled selected>Select a bus stop</option>
+        <option *ngFor="let stop of busStops">{{ stop }}</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="to">Destination:</label>
+      <select id="to" [(ngModel)]="to">
+        <option value="" disabled selected>Select a bus stop</option>
+        <option *ngFor="let stop of busStops">{{ stop }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Error message display -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <button (click)="calculateTimes()" class="search-btn">Search route</button>
+
+  <div *ngIf="results.length > 0" class="results-container">
+    <h3>Search Results</h3>
+    <div *ngFor="let result of results; let i = index" class="result-card">
+      <p><strong>From:</strong> {{ result.from }}</p>
+      <p><strong>To:</strong> {{ result.to }}</p>
+      <p><strong>Arrival:</strong> {{ result.arrivalTime }}</p>
+      <p><strong>Drop-Off:</strong> {{ result.dropOffTime }}</p>
+      <button (click)="deleteResult(i)" class="remove-btn">
+        <i class="fa fa-trash"></i> Remove
+      </button>
+      <button (click)="navigateToRoute(result.from, result.to)" class="view-routes-btn">
+        View Routes
+      </button>
+    </div>
+  </div>
+  
+</div>

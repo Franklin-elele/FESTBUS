@@ -1,0 +1,189 @@
+.logo {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  font-size: 50px; /* Larger font for impact */
+  font-weight: bolder;
+  color: #ffffff; /* White color when gradient is removed */
+  letter-spacing: 4px; /* Spacing for bold statement */
+  text-transform: uppercase; /* Clean uppercase styling */
+  background: linear-gradient(135deg, rgb(7, 7, 7), rgb(7, 7, 7)); /* Fresh gradient */
+  -webkit-background-clip: text; /* Clips gradient to text */
+  -webkit-text-fill-color: transparent; /* Shows gradient inside text */
+  padding: 8px 0;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent; /* Placeholder for underline effect */
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0e0d0d; /* Underline color */
+  transition: width 0.4s ease;
+}
+
+.logo:hover::before {
+  width: 100%; /* Expanding underline effect on hover */
+}
+
+.logo:hover {
+  background: none; /* Remove gradient */
+  -webkit-text-fill-color: #1a1919; /* Solid color on hover */
+  text-shadow: 0 0 10px rgba(137, 138, 137, 0.8); /* Green glowing effect */
+  transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.search input {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #2f5d34; /* Match the map border color */
+}
+
+/* For better integration with the existing layout */
+.main {
+  padding: 20px;
+  margin-bottom: 8%;
+  margin-top: 20px;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: #2f5d34 3px solid;
+  margin-bottom: 10px; /* Added space to position the search nicely */
+}
+
+
+.nearby-stops-container {
+  background-color: #333;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.stop-card {
+  background-color: #444;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.stop-card:hover {
+  transform: scale(1.01); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  background-color: #555; /* Lighter background on hover */
+}
+
+/* Existing inner styles */
+
+.stop-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  font-size: 24px;
+  color: #ff4d4d;
+}
+
+.stop-details {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.stop-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.walk-info {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.favorite-icon {
+  font-size: 20px;
+  color: #ff4d4d;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.route-number {
+  background-color: #555;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.route-destination {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.route-eta {
+  color: #bbb;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .nearby-stops-container {
+    padding: 8px;
+  }
+
+  .stop-card {
+    padding: 10px;
+  }
+
+  .header {
+    font-size: 1rem;
+  }
+
+  .stop-name {
+    font-size: 0.9rem;
+  }
+
+  .walk-info {
+    font-size: 0.7rem;
+  }
+
+  .route-info {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="route-container">
+    <div id="map"></div>
+    <div class="route-details">
+      <h3>Route Details</h3>
+      <h4>From: {{ from }}</h4>
+      <h4>To: {{ to }}</h4>
+      <div class="duration">Estimated Duration: {{ duration }}</div>
+      <h4>Stops Along the Route:</h4>
+      <ul>
+        <li *ngFor="let stop of stops">{{ stop }}</li>
+      </ul>
+    </div>
+  </div>
+  

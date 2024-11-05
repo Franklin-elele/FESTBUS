@@ -1,0 +1,56 @@
+.route-container {
+    padding: 20px;
+    background-color: #282c34;
+    color: #ffffff;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px; /* Max width for PC screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20vh;
+  }
+  
+  #map {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 400px; /* Height for the map */
+    margin-top: 20px;
+  }
+  
+  .route-details {
+    margin-top: 20px; /* Margin to separate from the map */
+  }
+  
+  .route-details h3 {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  
+  .route-details h4 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #f0ad4e;
+  }
+  
+  .route-details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .route-details ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s;
+  }
+  
+  .route-details ul li:hover {
+    background-color: #444;
+  }
+  
+  .duration {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #5cb85c;
+    margin: 15px 0;
+  }
+  
